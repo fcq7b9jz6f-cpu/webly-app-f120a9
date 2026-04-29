@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>موقع عن ام كلثوم شامل كامل</title>
+<meta name="description" content="موقع عن ام كلثوم شامل كامل — موقع منشور بواسطة Webly" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: { extend: { fontFamily: { sans: ['Cairo', 'Inter', 'system-ui', 'sans-serif'] } } }
+  };
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body, #root { margin: 0; min-height: 100%; }
+  body { font-family: 'Cairo', 'Inter', system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif; }
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background-color: #0c0c0c;
+  color: #fff;
+}
+
+.gold-gradient {
+  background: linear-gradient(to right, #d4af37, #f9e29c, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 10px;
+}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.26.2?deps=react@18.3.1,react-dom@18.3.1",
+    "lucide-react": "https://esm.sh/lucide-react@0.468.0?deps=react@18.3.1",
+    "framer-motion": "https://esm.sh/framer-motion@11.11.17?deps=react@18.3.1,react-dom@18.3.1",
+    "clsx": "https://esm.sh/clsx@2.1.1",
+    "zustand": "https://esm.sh/zustand@5.0.1?deps=react@18.3.1"
+  }
+}
+</script>
+<script src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"></script>
+</head>
+<body>
+<div id="root"><div style="min-height:100vh;display:grid;place-items:center;font-family:Cairo,sans-serif;color:#666">جارٍ تحميل التطبيق...</div></div>
+
+<script>
+  // Webly app runtime config
+  window.__WEBLY__ = { projectId: "f120a9fb-d8ac-492c-8f8b-366f28a8f927", apiBase: "https://wxphtsgezburjqoqiqqo.supabase.co/functions/v1/webly-app-api/f120a9fb-d8ac-492c-8f8b-366f28a8f927" };
+
+  // Global fetch interceptor: rewrite relative /api/data/* to absolute API base
+  (function(){
+    const origFetch = window.fetch.bind(window);
+    window.fetch = function(input, init){
+      try {
+        let url = typeof input === 'string' ? input : (input && input.url) || '';
+        if (typeof url === 'string' && url.startsWith('/api/data/')) {
+          const newUrl = window.__WEBLY__.apiBase + url.replace(/^/api/, '');
+          if (typeof input === 'string') return origFetch(newUrl, init);
+          return origFetch(new Request(newUrl, input), init);
+        }
+      } catch(_) {}
+      return origFetch(input, init);
+    };
+  })();
+
+  // Webly session for app data ownership
+  if (!localStorage.getItem('webly_session')) {
+    localStorage.setItem('webly_session', 'sess_' + Math.random().toString(36).slice(2) + Date.now().toString(36));
+  }
+  const sess = localStorage.getItem('webly_session');
+  const _f = window.fetch;
+  window.fetch = function(input, init){
+    init = init || {};
+    init.headers = new Headers(init.headers || (typeof input !== 'string' ? input.headers : undefined));
+    if (!init.headers.has('x-webly-session')) init.headers.set('x-webly-session', sess);
+    return _f(input, init);
+  };
+</script>
+
+<script>
+  const FILES = {"/main.jsx":"import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport { BrowserRouter } from 'react-router-dom';\nimport App from './App';\nimport './styles.css';\n\nReactDOM.createRoot(document.getElementById('root')).render(\n  <React.StrictMode>\n    <BrowserRouter>\n      <App />\n    </BrowserRouter>\n  </React.StrictMode>\n);","/App.jsx":"import { Routes, Route } from 'react-router-dom';\nimport Navbar from './components/Navbar';\nimport Footer from './components/Footer';\nimport Home from './pages/Home';\nimport Biography from './pages/Biography';\nimport Songs from './pages/Songs';\nimport Gallery from './pages/Gallery';\nimport Guestbook from './pages/Guestbook';\n\nfunction App() {\n  return (\n    <div className=\"min-h-screen flex flex-col bg-[#0c0c0c] text-white selection:bg-gold-500/30\">\n      <Navbar />\n      <main className=\"flex-grow\">\n        <Routes>\n          <Route path=\"/\" element={<Home />} />\n          <Route path=\"/biography\" element={<Biography />} />\n          <Route path=\"/songs\" element={<Songs />} />\n          <Route path=\"/gallery\" element={<Gallery />} />\n          <Route path=\"/guestbook\" element={<Guestbook />} />\n        </Routes>\n      </main>\n      <Footer />\n    </div>\n  );\n}\n\nexport default App;","/components/Navbar.jsx":"import { Link, useLocation } from 'react-router-dom';\nimport { Music, Menu, X, Mic2 } from 'lucide-react';\nimport { useState } from 'react';\nimport { motion, AnimatePresence } from 'framer-motion';\n\nconst Navbar = () => {\n  const [isOpen, setIsOpen] = useState(false);\n  const location = useLocation();\n\n  const links = [\n    { name: 'الرئيسية', path: '/' },\n    { name: 'السيرة الذاتية', path: '/biography' },\n    { name: 'الأعمال الغنائية', path: '/songs' },\n    { name: 'معرض الصور', path: '/gallery' },\n    { name: 'دفتر الزوار', path: '/guestbook' },\n  ];\n\n  return (\n    <nav className=\"sticky top-0 z-50 glass-morphism border-b border-white/10\">\n      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex items-center justify-between h-20\">\n          <div className=\"flex items-center gap-2\">\n            <Mic2 className=\"text-[#d4af37] w-8 h-8\" />\n            <Link to=\"/\" className=\"text-2xl font-bold gold-gradient tracking-tighter\">\n              كوكب الشرق\n            </Link>\n          </div>\n          \n          <div className=\"hidden md:block\">\n            <div className=\"flex items-baseline space-x-reverse space-x-8\">\n              {links.map((link) => (\n                <Link\n                  key={link.path}\n                  to={link.path}\n                  className={`px-3 py-2 text-sm font-medium transition-colors duration-300 ${\n                    location.pathname === link.path ? 'text-[#d4af37]' : 'text-gray-300 hover:text-white'\n                  }`}\n                >\n                  {link.name}\n                </Link>\n              ))}\n            </div>\n          </div>\n\n          <div className=\"md:hidden\">\n            <button onClick={() => setIsOpen(!isOpen)} className=\"text-gray-400 hover:text-white\">\n              {isOpen ? <X size={28} /> : <Menu size={28} />}\n            </button>\n          </div>\n        </div>\n      </div>\n\n      <AnimatePresence>\n        {isOpen && (\n          <motion.div \n            initial={{ opacity: 0, height: 0 }}\n            animate={{ opacity: 1, height: 'auto' }}\n            exit={{ opacity: 0, height: 0 }}\n            className=\"md:hidden bg-[#161616] border-b border-white/10 overflow-hidden\"\n          >\n            <div className=\"px-2 pt-2 pb-3 space-y-1 sm:px-3\">\n              {links.map((link) => (\n                <Link\n                  key={link.path}\n                  to={link.path}\n                  onClick={() => setIsOpen(false)}\n                  className=\"block px-3 py-4 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-[#d4af37]\"\n                >\n                  {link.name}\n                </Link>\n              ))}\n            </div>\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </nav>\n  );\n};\n\nexport default Navbar;","/pages/Home.jsx":"import { motion } from 'framer-motion';\nimport { Star, Music, Award, History } from 'lucide-react';\nimport { Link } from 'react-router-dom';\n\nconst Home = () => {\n  return (\n    <div className=\"relative\">\n      {/* Hero Section */}\n      <section className=\"relative h-[90vh] flex items-center justify-center overflow-hidden\">\n        <div className=\"absolute inset-0 z-0\">\n          <img \n            src=\"https://images.unsplash.com/photo-1549410940-d668388d554a?q=80&w=2000&auto=format&fit=crop\" \n            alt=\"Old Cairo Background\" \n            className=\"w-full h-full object-cover opacity-30 grayscale\"\n          />\n          <div className=\"absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-transparent to-transparent\"></div>\n        </div>\n        \n        <div className=\"relative z-10 text-center px-4 max-w-4xl\">\n          <motion.div\n            initial={{ opacity: 0, y: 30 }}\n            animate={{ opacity: 1, y: 0 }}\n            transition={{ duration: 0.8 }}\n          >\n            <h1 className=\"text-5xl md:text-8xl font-black mb-6 gold-gradient\">\n              أم كلثــوم\n            </h1>\n            <p className=\"text-xl md:text-2xl text-gray-300 font-light mb-8 leading-relaxed\">\n              \"الهرم الرابع\" و \"سيدة الغناء العربي\"\n              <br />\n              رحلة عبر صوت هز وجدان الشرق والغرب لفور عقود.\n            </p>\n            <div className=\"flex flex-wrap justify-center gap-4\">\n              <Link to=\"/biography\" className=\"px-8 py-3 bg-[#d4af37] text-black font-bold rounded-full hover:bg-[#b8962d] transition-all\">\n                اكتشف المسيرة\n              </Link>\n              <Link to=\"/songs\" className=\"px-8 py-3 border border-[#d4af37] text-[#d4af37] font-bold rounded-full hover:bg-[#d4af37]/10 transition-all\">\n                استمع للأغاني\n              </Link>\n            </div>\n          </motion.div>\n        </div>\n      </section>\n\n      {/* Quick Stats */}\n      <section className=\"py-20 bg-[#121212]\">\n        <div className=\"max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8\">\n          {[\n            { icon: <Music className=\"w-8 h-8\"/>, label: \"أكثر من ٣٠٠ أغنية\", detail: \"روائع موسيقية خالدة\" },\n            { icon: <History className=\"w-8 h-8\"/>, label: \"٥٠ عاماً من العطاء\", detail: \"مسيرة فنية منقطعة النظير\" },\n            { icon: <Star className=\"w-8 h-8\"/>, label: \"كوكب الشرق\", detail: \"لقب أطلقه عليها محبوها\" },\n            { icon: <Award className=\"w-8 h-8\"/>, label: \"أوسمة عالمية\", detail: \"تكريمات من ملوك ورؤساء\" }\n          ].map((item, index) => (\n            <motion.div \n              key={index}\n              whileHover={{ y: -10 }}\n              className=\"p-6 glass-morphism rounded-2xl text-center\"\n            >\n              <div className=\"text-[#d4af37] flex justify-center mb-4\">{item.icon}</div>\n              <h3 className=\"text-xl font-bold mb-2\">{item.label}</h3>\n              <p className=\"text-gray-400 text-sm\">{item.detail}</p>\n            </motion.div>\n          ))}\n        </div>\n      </section>\n\n      {/* Quote Section */}\n      <section className=\"py-24 px-4 bg-[#0c0c0c] text-center border-y border-white/5\">\n        <div className=\"max-w-3xl mx-auto\">\n          <span className=\"text-4xl text-[#d4af37]\">\"</span>\n          <h2 className=\"text-3xl md:text-4xl italic font-serif leading-loose mb-6\">\n            أنا لن أرد على ما يقال، صمتي هو ردي... وصوتي هو الذي سيتحدث.\n          </h2>\n          <p className=\"text-[#d4af37] font-semibold\">— أم كلثوم</p>\n        </div>\n      </section>\n    </div>\n  );\n};\n\nexport default Home;","/pages/Biography.jsx":"import { motion } from 'framer-motion';\nimport { ScrollText, Calendar, MapPin, Music } from 'lucide-react';\n\nconst Biography = () => {\n  const timeline = [\n    { year: '1898', event: 'الميلاد في قرية \"طماي الزهايرة\" بمحافظة الدقهلية.' },\n    { year: '1910', event: 'بدأت الغناء وهي طفلة مع والدها في الموالد والأفراح.' },\n    { year: '1923', event: 'الانتقال إلى القاهرة وبداية بزوغ نجمها في المسارح الكبرى.' },\n    { year: '1934', event: 'افتتحت بصوتها الإذاعة المصرية الرسمية.' },\n    { year: '1944', event: 'منحها الملك فاروق \"نيشان الكمال\" ولقب \"صاحبة العصمة\".' },\n    { year: '1967', event: 'قامت بجولات عالمية لدعم المجهود الحربي بعد النكسة.' },\n    { year: '1975', event: 'رحيل كوكب الشرق وتشييع جنازة مهيبة حضرها الملايين.' },\n  ];\n\n  return (\n    <div className=\"py-20 px-4 max-w-5xl mx-auto\">\n      <motion.div \n        initial={{ opacity: 0 }}\n        animate={{ opacity: 1 }}\n        className=\"mb-16 text-center\"\n      >\n        <h1 className=\"text-4xl md:text-6xl font-black gold-gradient mb-6\">المسيرة والميلاد</h1>\n        <p className=\"text-gray-400 max-w-2xl mx-auto leading-relaxed\">\n          فاطمة إبراهيم البلتاجي، التي عرفها العالم باسم أم كلثوم. قصة كفاح بدأت من القرية لتصل إلى قمة المجد الغنائي العالمي.\n        </p>\n      </motion.div>\n\n      <div className=\"space-y-12\">\n        <div className=\"grid md:grid-cols-2 gap-12 items-center\">\n          <motion.div \n            initial={{ x: -50, opacity: 0 }}\n            whileInView={{ x: 0, opacity: 1 }}\n            className=\"aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-white/10\"\n          >\n            <img \n              src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Oum_Kalthoum_1960s.png/800px-Oum_Kalthoum_1960s.png\" \n              alt=\"Umm Kulthum Portrait\" \n              className=\"w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700\"\n            />\n          </motion.div>\n          \n          <div className=\"space-y-6\">\n            <h2 className=\"text-3xl font-bold flex items-center gap-3\">\n              <ScrollText className=\"text-[#d4af37]\" />\n              نشأتها\n            </h2>\n            <p className=\"text-gray-300 leading-relaxed\">\n              ولدت في بيت متواضع، وكان والدها مؤذناً وحافظاً للقرآن. تعلمت منه مخارج الحروف وقواعد الترتيل، مما صقل صوتها القوي والرخيم منذ الصغر. كانت تخفي أنوثتها بزي بدوي وتغني في الفرق الإنشادية حتى لا يمنعها المجتمع آنذاك.\n            </p>\n            <div className=\"grid grid-cols-2 gap-4\">\n              <div className=\"p-4 glass-morphism rounded-xl\">\n                <MapPin className=\"text-[#d4af37] mb-2\" />\n                <h4 className=\"font-bold\">المسقط</h4>\n                <p className=\"text-xs text-gray-400\">طماي الزهايرة، مصر</p>\n              </div>\n              <div className=\"p-4 glass-morphism rounded-xl\">\n                <Music className=\"text-[#d4af37] mb-2\" />\n                <h4 className=\"font-bold\">الصوت</h4>\n                <p className=\"text-xs text-gray-400\">كونترالتو / ميزو-سوبرانو</p>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div className=\"py-20\">\n          <h2 className=\"text-3xl font-bold text-center mb-16\">التسلسل الزمني</h2>\n          <div className=\"relative border-r-2 border-[#d4af37]/30 mr-4 md:mr-0 md:border-r-0 md:before:content-[''] md:before:absolute md:before:w-1 md:before:h-full md:before:bg-[#d4af37]/30 md:before:left-1/2\">\n            {timeline.map((item, index) => (\n              <motion.div \n                key={index}\n                initial={{ opacity: 0, y: 20 }}\n                whileInView={{ opacity: 1, y: 0 }}\n                transition={{ delay: index * 0.1 }}\n                className={`mb-12 relative flex items-center justify-between w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}\n              >\n                <div className=\"md:w-5/12 hidden md:block\"></div>\n                <div className=\"absolute right-[-9px] md:left-1/2 md:ml-[-8px] w-4 h-4 bg-[#d4af37] rounded-full z-10\"></div>\n                <div className=\"w-full md:w-5/12 glass-morphism p-6 rounded-2xl mr-8 md:mr-0\">\n                  <span className=\"text-[#d4af37] font-black text-xl mb-2 block\">{item.year}</span>\n                  <p className=\"text-gray-300\">{item.event}</p>\n                </div>\n              </motion.div>\n            ))}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Biography;","/pages/Songs.jsx":"import { useState } from 'react';\nimport { motion } from 'framer-motion';\nimport { Play, Filter, Clock, Users } from 'lucide-react';\n\nconst Songs = () => {\n  const songs = [\n    { title: \"أنت عمري\", year: \"1964\", composer: \"محمد عبد الوهاب\", poet: \"أحمد شفيق كامل\", duration: \"58:00\" },\n    { title: \"ألف ليلة وليلة\", year: \"1969\", composer: \"بليغ حمدي\", poet: \"مرسي جميل عزيز\", duration: \"54:00\" },\n    { title: \"الأطلال\", year: \"1966\", composer: \"رياض السنباطي\", poet: \"إبراهيم ناجي\", duration: \"50:00\" },\n    { title: \"سيرة الحب\", year: \"1964\", composer: \"بليغ حمدي\", poet: \"مرسي جميل عزيز\", duration: \"45:00\" },\n    { title: \"فكروني\", year: \"1966\", composer: \"محمد عبد الوهاب\", poet: \"عبد الوهاب محمد\", duration: \"52:00\" },\n    { title: \"أمل حياتي\", year: \"1965\", composer: \"محمد عبد الوهاب\", poet: \"أحمد شفيق كامل\", duration: \"48:00\" },\n    { title: \"دارت الأيام\", year: \"1970\", composer: \"محمد عبد الوهاب\", poet: \"مأمون الشناوي\", duration: \"55:00\" },\n    { title: \"حب إيه\", year: \"1960\", composer: \"بليغ حمدي\", poet: \"عبد الوهاب محمد\", duration: \"40:00\" },\n  ];\n\n  const [searchTerm, setSearchTerm] = useState(\"\");\n\n  const filteredSongs = songs.filter(s => s.title.includes(searchTerm) || s.composer.includes(searchTerm));\n\n  return (\n    <div className=\"py-20 px-4 max-w-6xl mx-auto\">\n      <div className=\"flex flex-col md:flex-row justify-between items-end mb-12 gap-6\">\n        <div>\n          <h1 className=\"text-4xl md:text-6xl font-black gold-gradient\">المكتبة الموسيقية</h1>\n          <p className=\"text-gray-400 mt-4\">استعراض لأهم الروائع التي شدت بها كوكب الشرق.</p>\n        </div>\n        <div className=\"relative w-full md:w-80\">\n          <input \n            type=\"text\" \n            placeholder=\"ابحث عن اسم أغنية أو ملحن...\"\n            onChange={(e) => setSearchTerm(e.target.value)}\n            className=\"w-full bg-white/5 border border-white/10 rounded-full py-3 px-6 focus:outline-none focus:border-[#d4af37] transition-all\"\n          />\n        </div>\n      </div>\n\n      <div className=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n        {filteredSongs.map((song, idx) => (\n          <motion.div\n            key={idx}\n            layout\n            initial={{ opacity: 0, scale: 0.95 }}\n            animate={{ opacity: 1, scale: 1 }}\n            className=\"p-6 glass-morphism rounded-2xl group hover:border-[#d4af37]/50 transition-all flex items-center justify-between\"\n          >\n            <div className=\"flex items-center gap-4\">\n              <div className=\"w-16 h-16 bg-[#d4af37]/20 rounded-full flex items-center justify-center group-hover:bg-[#d4af37] transition-all\">\n                <Play className=\"text-[#d4af37] group-hover:text-black\" />\n              </div>\n              <div>\n                <h3 className=\"text-xl font-bold\">{song.title}</h3>\n                <div className=\"flex items-center gap-4 text-xs text-gray-400 mt-2\">\n                  <span className=\"flex items-center gap-1\"><Users size={12}/> {song.composer}</span>\n                  <span className=\"flex items-center gap-1\"><Clock size={12}/> {song.duration}</span>\n                  <span className=\"text-[#d4af37] font-mono\">{song.year}</span>\n                </div>\n              </div>\n            </div>\n            <button className=\"hidden sm:block px-4 py-2 text-xs border border-white/10 rounded-lg hover:bg-white/5\">\n              كلمات الأغنية\n            </button>\n          </motion.div>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default Songs;","/pages/Gallery.jsx":"import { motion } from 'framer-motion';\n\nconst Gallery = () => {\n  const images = [\n    \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Oum_Kalthoum_1960s.png/400px-Oum_Kalthoum_1960s.png\",\n    \"https://images.unsplash.com/photo-1514320298516-fb4ee744728f?w=600&auto=format&fit=crop\",\n    \"https://images.unsplash.com/photo-1493225255756-d9584f8606e9?w=600&auto=format&fit=crop\",\n    \"https://images.unsplash.com/photo-1511735111819-9a3f7709049c?w=600&auto=format&fit=crop\",\n    \"https://images.unsplash.com/photo-1460039230329-eb0f8a29a991?w=600&auto=format&fit=crop\",\n    \"https://images.unsplash.com/photo-1549410940-d668388d554a?w=600&auto=format&fit=crop\",\n  ];\n\n  return (\n    <div className=\"py-20 px-4 max-w-7xl mx-auto\">\n      <div className=\"text-center mb-16\">\n        <h1 className=\"text-5xl font-black gold-gradient mb-4\">ذاكرة بصرية</h1>\n        <p className=\"text-gray-400\">لقطات نادرة من حياة كوكب الشرق وحفلاتها التاريخية.</p>\n      </div>\n\n      <div className=\"columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6\">\n        {images.map((src, i) => (\n          <motion.div\n            key={i}\n            whileHover={{ scale: 1.02 }}\n            className=\"break-inside-avoid relative group rounded-3xl overflow-hidden border border-white/10\"\n          >\n            <img \n              src={src} \n              alt={`Kulthum ${i}`} \n              className=\"w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-500\"\n            />\n            <div className=\"absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6\">\n              <span className=\"text-sm font-medium\">أرشيف كوكب الشرق</span>\n            </div>\n          </motion.div>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default Gallery;","/pages/Guestbook.jsx":"import { useState, useEffect } from 'react';\nimport { motion, AnimatePresence } from 'framer-motion';\nimport { Send, User, MessageCircle, Heart } from 'lucide-react';\n\nconst Guestbook = () => {\n  const [messages, setMessages] = useState([]);\n  const [name, setName] = useState(\"\");\n  const [text, setText] = useState(\"\");\n  const [isSubmitting, setIsSubmitting] = useState(false);\n\n  useEffect(() => {\n    fetchMessages();\n  }, []);\n\n  const fetchMessages = async () => {\n    try {\n      const res = await fetch(\"/api/data/guestbook\");\n      const data = await res.json();\n      setMessages(data);\n    } catch (e) {\n      console.error(e);\n    }\n  };\n\n  const handleSubmit = async (e) => {\n    e.preventDefault();\n    if (!name || !text) return;\n\n    setIsSubmitting(true);\n    const newMessage = { \n      name, \n      text, \n      date: new Date().toLocaleDateString('ar-EG'),\n      likes: 0\n    };\n\n    try {\n      await fetch(\"/api/data/guestbook\", {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify(newMessage)\n      });\n      setName(\"\");\n      setText(\"\");\n      fetchMessages();\n    } catch (e) {\n      console.error(e);\n    } finally {\n      setIsSubmitting(false);\n    }\n  };\n\n  return (\n    <div className=\"py-20 px-4 max-w-4xl mx-auto\">\n      <div className=\"text-center mb-16\">\n        <h1 className=\"text-5xl font-black gold-gradient mb-4\">دفتر الزوار</h1>\n        <p className=\"text-gray-400\">اترك كلمة في ذكرى سيدة الغناء العربي.</p>\n      </div>\n\n      <div className=\"grid md:grid-cols-5 gap-12\">\n        <div className=\"md:col-span-2\">\n          <form onSubmit={handleSubmit} className=\"glass-morphism p-6 rounded-3xl sticky top-28 space-y-4\">\n            <div>\n              <label className=\"block text-sm font-medium text-gray-400 mb-2\">الاسم</label>\n              <input \n                value={name}\n                onChange={(e) => setName(e.target.value)}\n                className=\"w-full bg-[#0c0c0c] border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37]\"\n                placeholder=\"اسمك الكريم\"\n                required\n              />\n            </div>\n            <div>\n              <label className=\"block text-sm font-medium text-gray-400 mb-2\">رسالتك</label>\n              <textarea \n                value={text}\n                onChange={(e) => setText(e.target.value)}\n                rows=\"4\"\n                className=\"w-full bg-[#0c0c0c] border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] resize-none\"\n                placeholder=\"ماذا تحب أن تقول؟\"\n                required\n              ></textarea>\n            </div>\n            <button \n              disabled={isSubmitting}\n              className=\"w-full bg-[#d4af37] text-black font-bold py-3 rounded-xl hover:bg-[#b8962d] transition-all flex items-center justify-center gap-2\"\n            >\n              {isSubmitting ? \"جاري الإرسال...\" : <><Send size={18}/> إرسال</>}\n            </button>\n          </form>\n        </div>\n\n        <div className=\"md:col-span-3 space-y-6\">\n          <AnimatePresence initial={false}>\n            {messages.length === 0 ? (\n              <div className=\"text-center py-20 text-gray-500 italic\">لا توجد رسائل بعد.. كن أول من يعبر عن حبه.</div>\n            ) : (\n              messages.map((msg) => (\n                <motion.div\n                  key={msg.id}\n                  initial={{ opacity: 0, x: 20 }}\n                  animate={{ opacity: 1, x: 0 }}\n                  className=\"glass-morphism p-6 rounded-2xl relative overflow-hidden\"\n                >\n                  <div className=\"absolute top-0 right-0 w-1 h-full bg-[#d4af37]\"></div>\n                  <div className=\"flex justify-between items-start mb-4\">\n                    <div className=\"flex items-center gap-2\">\n                      <div className=\"w-10 h-10 bg-[#d4af37]/10 rounded-full flex items-center justify-center text-[#d4af37]\">\n                        <User size={20}/>\n                      </div>\n                      <div>\n                        <h4 className=\"font-bold\">{msg.name}</h4>\n                        <span className=\"text-[10px] text-gray-500 uppercase\">{msg.date}</span>\n                      </div>\n                    </div>\n                    <Heart size={16} className=\"text-gray-600 cursor-pointer hover:text-red-500 transition-colors\" />\n                  </div>\n                  <p className=\"text-gray-300 text-sm leading-relaxed\">{msg.text}</p>\n                </motion.div>\n              ))\n            )}\n          </AnimatePresence>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Guestbook;","/components/Footer.jsx":"import { Mic2, Mail, Globe, Heart } from 'lucide-react';\n\nconst Footer = () => {\n  return (\n    <footer className=\"bg-[#080808] border-t border-white/10 py-16\">\n      <div className=\"max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12\">\n        <div className=\"col-span-1 md:col-span-2\">\n          <div className=\"flex items-center gap-2 mb-6\">\n            <Mic2 className=\"text-[#d4af37] w-6 h-6\" />\n            <span className=\"text-2xl font-bold gold-gradient\">كوكب الشرق</span>\n          </div>\n          <p className=\"text-gray-400 leading-relaxed max-w-sm\">\n            منصة مخصصة لتخليد ذكرى سيدة الغناء العربي أم كلثوم، والحفاظ على تراثها الفني الفريد للأجيال القادمة.\n          </p>\n        </div>\n        \n        <div>\n          <h4 className=\"font-bold mb-6 flex items-center gap-2\"><Globe size={18} className=\"text-[#d4af37]\"/> روابط سريعة</h4>\n          <ul className=\"space-y-4 text-sm text-gray-500\">\n            <li><a href=\"/\" className=\"hover:text-[#d4af37] transition-colors\">الرئيسية</a></li>\n            <li><a href=\"/biography\" className=\"hover:text-[#d4af37] transition-colors\">السيرة الذاتية</a></li>\n            <li><a href=\"/songs\" className=\"hover:text-[#d4af37] transition-colors\">الأعمال الغنائية</a></li>\n          </ul>\n        </div>\n\n        <div>\n          <h4 className=\"font-bold mb-6 flex items-center gap-2\"><Mail size={18} className=\"text-[#d4af37]\"/> تواصل معنا</h4>\n          <p className=\"text-sm text-gray-500 mb-4\">للإعلام أو طلبات الأرشيف:</p>\n          <a href=\"mailto:info@omkalthoum.com\" className=\"text-[#d4af37] text-sm font-mono\">info@omkalthoum.com</a>\n        </div>\n      </div>\n      \n      <div className=\"max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600\">\n        <p>© {new Date().getFullYear()} أرشيف سيدة الغناء العربي. جميع الحقوق محفوظة.</p>\n        <p className=\"flex items-center gap-1\">صنع بكل <Heart size={12} className=\"text-red-900 fill-red-900\" /> في مصر</p>\n      </div>\n    </footer>\n  );\n};\n\nexport default Footer;"};
+  const ENTRY = "/main.jsx";
+  const moduleCache = {};
+  const inflight = {};
+
+  function resolvePath(from, spec) {
+    // External (mapped via importmap) — keep as-is
+    if (!spec.startsWith('.') && !spec.startsWith('/')) return null;
+    let base = from.replace(/[^/]+$/, '');
+    let path = spec.startsWith('/') ? spec : (base + spec);
+    // normalize ../ and ./
+    const segs = [];
+    for (const s of path.split('/')) {
+      if (s === '' || s === '.') continue;
+      if (s === '..') segs.pop();
+      else segs.push(s);
+    }
+    const tryPaths = [];
+    const p = '/' + segs.join('/');
+    tryPaths.push(p);
+    for (const ext of ['.jsx', '.js', '.tsx', '.ts']) tryPaths.push(p + ext);
+    for (const ext of ['.jsx', '.js', '.tsx', '.ts']) tryPaths.push(p + '/index' + ext);
+    for (const t of tryPaths) if (FILES[t] !== undefined) return t;
+    return null;
+  }
+
+  function transform(code, path) {
+    const presets = ['react'];
+    if (/.tsx?$/.test(path)) presets.push('typescript');
+    return Babel.transform(code, {
+      presets: presets.map((p) => p === 'typescript' ? ['typescript', { allExtensions: true, isTSX: true }] : p),
+      plugins: [],
+      filename: path,
+      sourceType: 'module',
+    }).code;
+  }
+
+  // Build a per-module ESM source via dynamic import using a Blob URL.
+  async function loadModule(path) {
+    if (moduleCache[path]) return moduleCache[path];
+    if (inflight[path]) return inflight[path];
+    const src = FILES[path];
+    if (src === undefined) throw new Error('Module not found: ' + path);
+
+    // Rewrite relative imports to Blob-loaded modules; leave bare specifiers for importmap.
+    const transformed = transform(src, path);
+
+    // Find import/export-from sources, swap relative ones with awaited blob URLs.
+    const importRegex = /(import\s+(?:[\w*\s{},]+\s+from\s+)?|export\s+\*\s+from\s+|export\s+\{[^}]*\}\s+from\s+)["']([^"']+)["']/g;
+    const deps = [];
+    let m;
+    const re = new RegExp(importRegex.source, 'g');
+    while ((m = re.exec(transformed)) !== null) {
+      const spec = m[2];
+      const resolved = resolvePath(path, spec);
+      if (resolved) deps.push({ spec, resolved });
+    }
+
+    // Pre-load dependencies and build a map of original spec -> blob URL
+    const depUrls = {};
+    for (const d of deps) {
+      const url = await loadModule(d.resolved);
+      depUrls[d.spec] = url;
+    }
+
+    const finalCode = transformed.replace(re, (full, prefix, spec) => {
+      if (depUrls[spec]) return prefix + '"' + depUrls[spec] + '"';
+      return full;
+    });
+
+    const blob = new Blob([finalCode], { type: 'text/javascript' });
+    const url = URL.createObjectURL(blob);
+    moduleCache[path] = url;
+    return url;
+  }
+
+  (async () => {
+    try {
+      const entryUrl = await loadModule(ENTRY);
+      await import(entryUrl);
+    } catch (err) {
+      console.error('[Webly]', err);
+      const msg = (err && err.stack) ? err.stack : String(err);
+      document.getElementById('root').innerHTML =
+        '<div style="padding:24px;font-family:ui-monospace,monospace;direction:ltr;text-align:left">' +
+        '<h2 style="color:#b91c1c;margin:0 0 12px">Webly Runtime Error</h2>' +
+        '<pre style="white-space:pre-wrap;color:#7f1d1d;background:#fef2f2;padding:16px;border-radius:8px;border:1px solid #fecaca">' +
+        msg.replace(/[&<>]/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;' }[c])) +
+        '</pre></div>';
+    }
+  })();
+</script>
+</body>
+</html>
